@@ -7,6 +7,7 @@ import { HeaderComponent } from './weatherApp/header/header.component';
 import { HomeComponent } from './weatherApp/home/home.component';
 import { FooterComponent } from './weatherApp/footer/footer.component';
 import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,20 @@
-<div class="card" style="width: 18rem;">
-  <img src="http://localhost:4200/api/static/img/weather/c.svg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="container d-flex justify-content-center">
+
+<!--  <div class="card" style="width: 18rem;">
+    <img src="http://localhost:4200/api/static/img/weather/sn.svg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+        content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>-->
+
+  <div [formGroup]="searchForm">
+    <input type="text" class="form-control" formControlName="search"/>
+    <button class="btn btn-outline-primary" type="submit" (click)="onSubmit()">Search</button>
   </div>
+
+
+
 </div>

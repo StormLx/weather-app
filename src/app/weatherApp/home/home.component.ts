@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {WeatherService} from "../../service-api/weather.service";
+import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-home',
@@ -8,15 +9,17 @@ import {WeatherService} from "../../service-api/weather.service";
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private weatherService: WeatherService) { }
+  searchForm = this.fb.group({
+    search:['']
+  })
+
+  constructor(private weatherService: WeatherService, public fb: FormBuilder) { }
 
   ngOnInit(): void {
-    console.log("home component created.")
-    this.weatherService.findLocation('Paris').subscribe();
   }
 
-
-
-
-
+  onSubmit() {
+    const location = this.searchForm.get('search')?.value;
+    location ? this.weatherService.findLocation(location).subscribe() : null;
+  }
 }
